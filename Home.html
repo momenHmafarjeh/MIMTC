@@ -3,15 +3,25 @@
   <head>
     <!-- Add your meta tags and title here -->
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Add your CSS styles here */
+    </style>
   </head>
   <body>
     <nav class="navbar">
       <div class="navdiv">
         <div class="logo"><a href="#">MIMTC</a></div>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li id="home"><a href="#">Home</a></li>
+          <li id="about"><a href="#">About</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Category</a>
+            <div class="dropdown-content">
+              <a href="#">Category 1</a>
+              <a href="#">Category 2</a>
+              <a href="#">Category 3</a>
+            </div>
+          </li>
           <li>
             <div class="search-container">
               <input type="text" class="search-box" placeholder="Search" />
@@ -21,5 +31,34 @@
         </ul>
       </div>
     </nav>
+
+    <script>
+      // JavaScript to handle the dropdown menu
+      const dropdown = document.querySelector(".dropdown");
+      const dropdownContent = document.querySelector(".dropdown-content");
+
+      dropdown.addEventListener("click", function () {
+        dropdownContent.classList.toggle("show");
+      });
+
+      window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+          if (dropdownContent.classList.contains("show")) {
+            dropdownContent.classList.remove("show");
+          }
+        }
+      };
+
+      // JavaScript to handle button clicks
+      document.getElementById("home").addEventListener("click", function () {
+        // Handle Home button click
+        window.location.href = "home.html"; // Replace with the actual URL
+      });
+
+      document.getElementById("about").addEventListener("click", function () {
+        // Handle About button click
+        window.location.href = "about.html"; // Replace with the actual URL
+      });
+    </script>
   </body>
 </html>
