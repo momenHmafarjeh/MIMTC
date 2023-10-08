@@ -1,6 +1,16 @@
 * {
   text-decoration: none;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 .navbar {
   background: #21294C;
@@ -84,4 +94,21 @@ li a {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.content {
+  /* Your content styles here */
+  flex-grow: 1;
+}
+
+footer {
+  background-color: #21294C;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 960px;
+  margin: 0 auto;
 }
